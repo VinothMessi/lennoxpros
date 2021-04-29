@@ -23,18 +23,15 @@ import java.net.URL;
 @Logger
 public class Remote {
 
-    @Value("${hub.host}")
+    @Value("${hub_host}")
     private String host;
-
-    @Value("${hub.port}")
-    private String port;
 
     @Lazy
     @Bean
     @Scope("browser")
     @ConditionalOnProperty(name = "browser", value = "firefox")
     public WebDriver firefox() throws MalformedURLException {
-        return new RemoteWebDriver(new URL("http://" + this.host + ":" + this.port + "/wd/hub"), DesiredCapabilities.firefox());
+        return new RemoteWebDriver(new URL("http://" + this.host + ":4444/wd/hub"), DesiredCapabilities.firefox());
     }
 
     @Lazy
@@ -42,7 +39,7 @@ public class Remote {
     @Scope("browser")
     @ConditionalOnMissingBean
     public WebDriver chrome() throws MalformedURLException {
-        return new RemoteWebDriver(new URL("http://" + this.host + ":" + this.port + "/wd/hub"), DesiredCapabilities.chrome());
+        return new RemoteWebDriver(new URL("http://" + this.host + ":4444/wd/hub"), DesiredCapabilities.chrome());
     }
 
 }
