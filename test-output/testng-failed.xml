@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [LennoxPros]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Creating Leads - Functional Testing(failed)">
+    <classes>
+      <class name="com.liidaveqa.lennoxpros.testcases.TestLead">
+        <methods>
+          <include name="createLead" invocation-numbers="1"/>
+          <include name="springTestContextBeforeTestClass"/>
+          <include name="springTestContextBeforeTestMethod"/>
+          <include name="setUp"/>
+          <include name="springTestContextPrepareTestInstance"/>
+          <include name="springTestContextAfterTestClass"/>
+          <include name="springTestContextAfterTestMethod"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- com.liidaveqa.lennoxpros.testcases.TestLead -->
+    </classes>
+  </test> <!-- Creating Leads - Functional Testing(failed) -->
+</suite> <!-- Failed suite [LennoxPros] -->

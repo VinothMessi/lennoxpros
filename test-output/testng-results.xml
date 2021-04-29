@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2021-04-29T17:00:55 IST" name="LennoxPros" finished-at="2021-04-29T17:03:17 IST" duration-ms="141149">
+    <groups>
+    </groups>
+    <test started-at="2021-04-29T17:00:55 IST" name="Creating Leads - Functional Testing" finished-at="2021-04-29T17:03:17 IST" duration-ms="141149">
+      <class name="com.liidaveqa.lennoxpros.testcases.TestLead">
+        <test-method is-config="true" signature="springTestContextBeforeTestClass()[pri:0, instance:com.liidaveqa.lennoxpros.testcases.TestLead@22d6f11]" started-at="2021-04-29T17:00:55 IST" name="springTestContextBeforeTestClass" finished-at="2021-04-29T17:00:55 IST" duration-ms="27" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextBeforeTestClass -->
+        <test-method is-config="true" signature="springTestContextPrepareTestInstance()[pri:0, instance:com.liidaveqa.lennoxpros.testcases.TestLead@22d6f11]" started-at="2021-04-29T17:00:55 IST" name="springTestContextPrepareTestInstance" finished-at="2021-04-29T17:02:27 IST" depends-on-methods="org.springframework.test.context.testng.AbstractTestNGSpringContextTests.springTestContextBeforeTestClass" duration-ms="91137" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextPrepareTestInstance -->
+        <test-method is-config="true" signature="setUp(org.testng.ITestContext)[pri:0, instance:com.liidaveqa.lennoxpros.testcases.TestLead@22d6f11]" started-at="2021-04-29T17:02:27 IST" name="setUp" finished-at="2021-04-29T17:02:27 IST" duration-ms="341" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@46875fae]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method is-config="true" signature="springTestContextBeforeTestMethod(java.lang.reflect.Method)[pri:0, instance:com.liidaveqa.lennoxpros.testcases.TestLead@22d6f11]" started-at="2021-04-29T17:02:28 IST" name="springTestContextBeforeTestMethod" finished-at="2021-04-29T17:02:28 IST" duration-ms="2" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.liidaveqa.lennoxpros.testcases.TestLead.createLead(java.util.Map)]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextBeforeTestMethod -->
+        <test-method signature="createLead(java.util.Map)[pri:0, instance:com.liidaveqa.lennoxpros.testcases.TestLead@22d6f11]" started-at="2021-04-29T17:02:28 IST" name="createLead" data-provider="Leads" finished-at="2021-04-29T17:03:16 IST" duration-ms="48687" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{requestTime=10:15 AM, firstName=Sanity6, lastName=Test6, fileName=Serverless.png, phoneNumber=0123456790, appointmentTime=10:45 AM, upload=img, requestDate=30, emailID=Sanity3.Test3@gmail.com, appointmentDate=30}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createLead -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.liidaveqa.lennoxpros.testcases.TestLead@22d6f11]" started-at="2021-04-29T17:03:16 IST" name="tearDown" finished-at="2021-04-29T17:03:17 IST" duration-ms="336" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=createLead status=SUCCESS method=TestLead.createLead(java.util.Map)[pri:0, instance:com.liidaveqa.lennoxpros.testcases.TestLead@22d6f11] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="springTestContextAfterTestMethod(java.lang.reflect.Method)[pri:0, instance:com.liidaveqa.lennoxpros.testcases.TestLead@22d6f11]" started-at="2021-04-29T17:03:17 IST" name="springTestContextAfterTestMethod" finished-at="2021-04-29T17:03:17 IST" duration-ms="3" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.liidaveqa.lennoxpros.testcases.TestLead.createLead(java.util.Map)]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextAfterTestMethod -->
+        <test-method is-config="true" signature="springTestContextAfterTestClass()[pri:0, instance:com.liidaveqa.lennoxpros.testcases.TestLead@22d6f11]" started-at="2021-04-29T17:03:17 IST" name="springTestContextAfterTestClass" finished-at="2021-04-29T17:03:17 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextAfterTestClass -->
+      </class> <!-- com.liidaveqa.lennoxpros.testcases.TestLead -->
+    </test> <!-- Creating Leads - Functional Testing -->
+  </suite> <!-- LennoxPros -->
+</testng-results>
