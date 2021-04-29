@@ -12,6 +12,7 @@ import com.liidaveqa.lennoxpros.workflow.CreatingALead;
 import java.io.IOException;
 import java.util.Arrays;
 
+import org.openqa.selenium.WebDriver;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -19,11 +20,15 @@ import org.springframework.context.annotation.Lazy;
 import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
 import org.testng.ITestContext;
 import org.testng.ITestResult;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 
 @SpringBootTest
 public class TestBase extends AbstractTestNGSpringContextTests {
+	
+	@Autowired
+    private WebDriver browser;
 
 	@Lazy
 	@Autowired
@@ -78,5 +83,10 @@ public class TestBase extends AbstractTestNGSpringContextTests {
 			testCase.skip(m);
 		}
 		report.writeContents();
+	}
+	
+	@AfterClass
+	public void tearDown() {
+		browser.quit();
 	}
 }
