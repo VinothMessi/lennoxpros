@@ -7,7 +7,6 @@ import org.testng.ITestContext;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import java.io.IOException;
 import java.lang.reflect.Method;
 import java.util.Map;
 
@@ -38,29 +37,16 @@ public class TestLead extends TestBase {
 			testCase.info("Trying to add a Lead");
 		}).addLeadsPage(p -> {
 			p.hasItLoaded();
-			p.fillUerDetails(testdata.get("firstName"), testdata.get("lastName"), testdata.get("phoneNumber"),
-					testdata.get("emailID"));
-			testCase.info("User Details filled successfully");
-			p.fillRequestDate(testdata.get("requestDate"));
-			p.fillAppointmentDate(testdata.get("appointmentDate"));
-			p.fillRequestTime(testdata.get("requestTime"));
-			p.fillAppointmentTime(testdata.get("appointmentTime"));
-			testCase.info("Date adn Time Details filled successfully");
-			if (testdata.get("upload").equals("doc")) {
-				p.uploadDocument(testdata.get("fileName"));
-				testCase.info("Document:" + testdata.get("fileName") + " " + "uploaded successfully");
-			}
-			if (testdata.get("upload").equals("img")) {
-				p.uploadImage(testdata.get("fileName"));
-				testCase.info("Image:" + testdata.get("fileName") + " " + "uploaded successfully");
-			}
+			p.saveAs(testdata.get("firstName"), testdata.get("lastName"), testdata.get("phoneNumber"),
+					testdata.get("emailID"), testdata.get("requestDate"), testdata.get("appointmentDate"),
+					testdata.get("requestTime"), testdata.get("appointmentTime"), testdata.get("upload"),
+					testdata.get("fileName"));
+			testCase.info("Lead created successfully:" + testdata.get("firstName") + testdata.get("lastName"));
+
 			testCase.info("Success Message:" + p.saveLead());
-			try {
-				String snap = takeSnap.saveAs(testdata.get("firstName") + "_" + testdata.get("lastName") + ".png");
-				testCase.addScreenCaptureFromPath(snap);
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
+			String snap = takeSnap.saveAs(testdata.get("firstName") + "_" + testdata.get("lastName") + ".png");
+			testCase.addScreenCaptureFromPath(snap);
+
 			p.goToWelcomePage();
 		}).welcomePage(p -> {
 			p.logOut();

@@ -23,9 +23,15 @@ public class TakeASnap {
 	@Value("${user.dir}" + "${snap.path}")
 	private String snapPath;
 
-	public String saveAs(final String imageName) throws IOException {
-		FileUtils.copyFile(printScreen(), create(imageName));
-		return create(imageName).getAbsolutePath();
+	public String saveAs(final String imageName) {
+		String path = "";
+		try {
+			FileUtils.copyFile(printScreen(), create(imageName));
+			path = create(imageName).getAbsolutePath();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return path;
 	}
 
 	private File printScreen() {
@@ -35,5 +41,4 @@ public class TakeASnap {
 	private File create(final String imageName) {
 		return new File(this.snapPath + imageName);
 	}
-
 }
