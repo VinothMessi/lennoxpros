@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Lazy;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 import com.aventstack.extentreports.ExtentReports;
@@ -17,6 +18,7 @@ import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 @Lazy
 @Component
 @Logger
+@Scope("prototype")
 public class TestReport {
 
 	@Value("${user.dir}" + "${report.config}")

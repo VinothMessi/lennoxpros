@@ -26,14 +26,13 @@ import org.testng.annotations.BeforeClass;
 
 @SpringBootTest
 public class TestBase extends AbstractTestNGSpringContextTests {
-	
 	@Autowired
-    private WebDriver browser;
+	private WebDriver browser;
 
 	@Lazy
 	@Autowired
 	protected TestReport report;
-	
+
 	@Lazy
 	@Autowired
 	protected TakeASnap takeSnap;
@@ -56,7 +55,7 @@ public class TestBase extends AbstractTestNGSpringContextTests {
 	public void setUp(ITestContext ctx) throws IOException {
 		excelReader = new ExcelReader(excelPath, excelName);
 		ctx.setAttribute("excelData", excelReader);
-		parentTest = report.createTestCase(ctx.getName());
+		parentTest = report.createTestCase(ctx.getName().toUpperCase());
 	}
 
 	@AfterMethod
@@ -84,9 +83,9 @@ public class TestBase extends AbstractTestNGSpringContextTests {
 		}
 		report.writeContents();
 	}
-	
+
 	@AfterClass
-	public void tearDown() {
+	public void shutDown() {
 		browser.quit();
 	}
 }

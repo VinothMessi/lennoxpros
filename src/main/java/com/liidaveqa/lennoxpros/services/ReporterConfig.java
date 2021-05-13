@@ -10,10 +10,8 @@ import com.aventstack.extentreports.ExtentReports;
 @Configuration
 @Logger
 public class ReporterConfig {
-	
 	@Bean
 	public ExtentReports report() {
 		return new ExtentReports();
 	}
-	
 }

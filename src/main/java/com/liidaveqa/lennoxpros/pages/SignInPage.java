@@ -16,7 +16,6 @@ import static org.awaitility.Awaitility.*;
 @Component
 @Logger
 public class SignInPage extends BasePage {
-
     @Value("${app.username}")
     private String uName;
 

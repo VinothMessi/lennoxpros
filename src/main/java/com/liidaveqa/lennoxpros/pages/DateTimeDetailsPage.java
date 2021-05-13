@@ -18,7 +18,6 @@ import com.liidaveqa.lennoxpros.services.Logger;
 @Component
 @Logger
 public class DateTimeDetailsPage extends BasePage {
-
 	@FindBy(id = "calender1")
 	private WebElement requestDate;
 

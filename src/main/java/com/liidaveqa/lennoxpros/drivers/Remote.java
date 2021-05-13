@@ -10,7 +10,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.context.annotation.Profile;
-import org.springframework.context.annotation.Scope;
 
 import com.liidaveqa.lennoxpros.services.Logger;
 
@@ -28,15 +27,13 @@ public class Remote {
 
     @Lazy
     @Bean
-    @Scope("browser")
-    @ConditionalOnProperty(name = "browser", value = "firefox")
+    @ConditionalOnProperty(name = "browser.name", havingValue = "firefox")
     public WebDriver firefox() throws MalformedURLException {
         return new RemoteWebDriver(new URL("http://" + this.host + ":4444/wd/hub"), DesiredCapabilities.firefox());
     }
 
     @Lazy
     @Bean
-    @Scope("browser")
     @ConditionalOnMissingBean
     public WebDriver chrome() throws MalformedURLException {
         return new RemoteWebDriver(new URL("http://" + this.host + ":4444/wd/hub"), DesiredCapabilities.chrome());

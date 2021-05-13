@@ -10,7 +10,6 @@ import org.springframework.stereotype.Component;
 @Aspect
 @Component
 public class LoggerAspect {
-
 	@Autowired
 	private LogService logService;
 
@@ -25,5 +24,4 @@ public class LoggerAspect {
 		this.logService
 				.info("Method: " + joinPoint.getSignature().getName() + "() is executed successfully............");
 	}
-
 }

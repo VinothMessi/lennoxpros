@@ -18,7 +18,6 @@ import static org.hamcrest.core.Is.is;
 @Component
 @Logger
 public class WelcomePage extends BasePage {
-
 	@Value("${app.username}")
 	private String uName;
 

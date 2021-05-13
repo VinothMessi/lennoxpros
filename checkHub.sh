@@ -12,4 +12,4 @@ do
 done
 
 # start the java command
-java -cp lennoxpros-0.0.1-SNAPSHOT.jar lennoxpros-0.0.1-SNAPSHOT.jar:lennoxpros-0.0.1-SNAPSHOT.jar.original lennoxpros-0.0.1-SNAPSHOT.jar.original:lennoxpros-0.0.1-SNAPSHOT-tests.jar lennoxpros-0.0.1-SNAPSHOT-tests.jar:libs/* -Dspring.profiles.active=$PROFILE -Dhub_host=$HUB_HOST -Dbrowser=$BROWSER org.testng.TestNG $MODULE
+java -cp lennoxpros-0.0.1-SNAPSHOT.jar:lennoxpros-0.0.1-SNAPSHOT.jar.original:lennoxpros-0.0.1-SNAPSHOT-tests.jar:libs/* -Dspring.profiles.active=$PROFILE -Dhub_host=$HUB_HOST -Dbrowser=$BROWSER org.testng.TestNG $MODULE

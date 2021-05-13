@@ -15,7 +15,6 @@ import com.liidaveqa.lennoxpros.services.Logger;
 @Component
 @Logger
 public class UserDetailsPage extends BasePage {
-
 	@FindBy(id = "firstName")
 	private WebElement firstName;
 

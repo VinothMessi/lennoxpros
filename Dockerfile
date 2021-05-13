@@ -9,14 +9,14 @@ COPY src src
 # Copying pom file
 COPY pom.xml pom.xml
 
-RUN mvn dependency:go-offline -B
-RUN mvn clean package -DskipTests
-
 # Copying reources
 COPY lennoxpros.xml lennoxpros.xml
 COPY resources resources
 COPY results results
 COPY checkHub.sh checkHub.sh
+
+RUN mvn dependency:go-offline -B
+RUN mvn clean package -DskipTests
 
 # Create an Image
 FROM openjdk:13-alpine3.9

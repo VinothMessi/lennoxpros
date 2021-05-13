@@ -6,7 +6,6 @@ import java.util.Date;
 
 @Logger
 public class RandomUtils {
-
 	private static SecureRandom random = new SecureRandom();
 
 	public static String generateRandomString(int length) {
@@ -37,5 +36,4 @@ public class RandomUtils {
 		Date now = new Date();
 		return now.toString().replace(":", "-");
 	}
-
 }

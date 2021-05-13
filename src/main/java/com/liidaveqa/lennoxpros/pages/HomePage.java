@@ -16,7 +16,6 @@ import static org.awaitility.Awaitility.await;
 @Component
 @Logger
 public class HomePage extends BasePage {
-
     @Value("${app.url}")
     private String url;
 

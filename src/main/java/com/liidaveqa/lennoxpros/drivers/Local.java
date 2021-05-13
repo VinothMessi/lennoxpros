@@ -12,7 +12,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.context.annotation.Profile;
-import org.springframework.context.annotation.Scope;
 
 import com.liidaveqa.lennoxpros.services.Logger;
 
@@ -27,8 +26,7 @@ public class Local {
 
     @Lazy
     @Bean
-    @Scope("browser")
-    @ConditionalOnProperty(name = "browser", havingValue = "edge")
+    @ConditionalOnProperty(name = "browser.name", havingValue = "edge")
     public WebDriver edge() {
         WebDriverManager.edgedriver().browserVersion(this.version).setup();
         return new EdgeDriver();
@@ -36,8 +34,7 @@ public class Local {
 
     @Lazy
     @Bean
-    @Scope("browser")
-    @ConditionalOnProperty(name = "browser", havingValue = "firefox")
+    @ConditionalOnProperty(name = "browser.name", havingValue = "firefox")
     public WebDriver firefox() {
         WebDriverManager.firefoxdriver().browserVersion(this.version).setup();
         return new FirefoxDriver();
@@ -45,7 +42,6 @@ public class Local {
 
     @Lazy
     @Bean
-    @Scope("browser")
     @ConditionalOnMissingBean
     public WebDriver chrome() {
         WebDriverManager.chromedriver().browserVersion(this.version).setup();

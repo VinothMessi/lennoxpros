@@ -13,41 +13,45 @@ import javax.annotation.PostConstruct;
 @Logger
 public abstract class BasePage {
 
-    @Autowired
-    protected WebDriver browser;
+	@Autowired
+	protected WebDriver browser;
 
-    protected JavascriptExecutor js;
+	protected JavascriptExecutor js;
 
-    @PostConstruct
-    private void init() {
-        PageFactory.initElements(browser, this);
-        js = (JavascriptExecutor) browser;
-    }
+	@PostConstruct
+	private void init() {
+		PageFactory.initElements(browser, this);
+		js = (JavascriptExecutor) browser;
+	}
 
-    abstract boolean hasItLoaded();
+	abstract boolean hasItLoaded();
 
-    protected void maximize() {
-        browser.manage().window().maximize();
-    }
+	protected void closeAll() {
+		browser.quit();
+	}
 
-    protected void goTo(String url) {
-        browser.get(url);
-    }
+	protected void maximize() {
+		browser.manage().window().maximize();
+	}
 
-    protected void clickOn(WebElement ele) {
-        ele.click();
-    }
+	protected void goTo(String url) {
+		browser.get(url);
+	}
 
-    protected void type(String text, WebElement ele) {
-        ele.sendKeys(text);
-    }
+	protected void clickOn(WebElement ele) {
+		ele.click();
+	}
 
-    protected boolean canWeSee(WebElement ele) {
-        return ele.isDisplayed();
-    }
+	protected void type(String text, WebElement ele) {
+		ele.sendKeys(text);
+	}
 
-    protected boolean canWeClickOn(WebElement ele) {
-        return ele.isEnabled();
-    }
+	protected boolean canWeSee(WebElement ele) {
+		return ele.isDisplayed();
+	}
+
+	protected boolean canWeClickOn(WebElement ele) {
+		return ele.isEnabled();
+	}
 
 }
